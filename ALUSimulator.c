@@ -110,19 +110,19 @@ extern void ALUSimulator( RegisterFile theRegisterFile,
 
   }
   else if(OpCode == 8){
-		Rdvalue = RdValue_S + ImmediateValue;
+		Rdvalue = RdValue_S + (int32_t)(int16_t)ImmediateValue;
 		RegisterFile_Write(theRegisterFile, 1, Rt, Rdvalue);
   }
 	else if(OpCode == 9){
-		Rdvalue = (int)(unsigned int)RdValue_S + ImmediateValue;
+		Rdvalue = (int)(unsigned int)RdValue_S + (int32_t)(int16_t)ImmediateValue;
 		RegisterFile_Write(theRegisterFile, 1, Rt, Rdvalue);
 	}
 	else if(OpCode == 10){
-		Rdvalue = RdValue_S < ImmediateValue ? 1 : 0;
+		Rdvalue = RdValue_S < (int32_t)(int16_t)ImmediateValue ? 1 : 0;
 		RegisterFile_Write(theRegisterFile, 1, Rt, Rdvalue);
 	}
 	else if(OpCode == 11){
-		Rdvalue = (int)(unsigned int)RdValue_S < ImmediateValue ? 1 : 0;
+		Rdvalue = (int)(unsigned int)RdValue_S < (int32_t)(int16_t)ImmediateValue ? 1 : 0;
 		RegisterFile_Write(theRegisterFile, 1, Rt, Rdvalue);
 	}
 
